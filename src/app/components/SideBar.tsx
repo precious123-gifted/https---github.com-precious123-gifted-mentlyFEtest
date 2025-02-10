@@ -1,6 +1,6 @@
 import React from 'react';
 // Import the icon components
-import mentlyLogo from '../assets/mently-logo.svg';
+import mentlyLogo from '../assets/mently-logo.png';
 import DashboardIcon from '../components/icons/DashboardIcon';
 import AnalyticsIcon from '../components/icons/AnalyticsIcon';
 import ProgramsIcon from '../components/icons/ProgramsIcon';
