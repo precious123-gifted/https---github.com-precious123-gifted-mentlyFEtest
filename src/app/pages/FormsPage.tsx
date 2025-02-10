@@ -191,7 +191,7 @@ export default function FormPage() {
     <span>2PM</span>
   </div></section>
 
-<Image src={bannerIMG} alt='image' className='w-[8vw] ml-[0.4vw]'/>
+<Image src={bannerIMG} alt='image' className='w-[8vw] ml-[0.4vw] aspect-auto'/>
 
   </div>
         
