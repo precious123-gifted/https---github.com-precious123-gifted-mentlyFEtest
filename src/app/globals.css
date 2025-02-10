@@ -6,6 +6,8 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+input{margin: none;}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,8 +16,89 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Logo Nod Animation */
+@keyframes nod {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px); /* Slight upward movement */
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
+.animate-nod {
+  animation: nod 0.8s ease-in-out infinite;
+  animation-play-state: paused; /* Pause animation by default */
+}
+
+.group:hover .animate-nod {
+  animation-play-state: running; /* Start animation on hover */
+}
+
+
+/* Icon Pop-Down Animation */
+@keyframes popDown {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Start at original position */
+  }
+  25% {
+    transform: translateY(20px) rotate(90deg); /* Move down and start rotating */
+  }
+  50% {
+    transform: translateY(40px) rotate(180deg); /* Fully out of view and rotated */
+    opacity: 0; /* Fade out */
+  }
+  75% {
+    transform: translateY(20px) rotate(90deg); /* Start coming back */
+    opacity: 0; /* Stay faded out */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg); /* Return to original position */
+    opacity: 1; /* Fade back in */
+  }
+}
+
+.icon-pop-down {
+  animation: none; /* No animation by default */
+}
+
+/* Trigger animation when the parent <a> is hovered */
+a:hover .icon-pop-down {
+  animation: popDown 0.5s ease-in-out forwards;
+}
+
+/* Text Pop-Up Animation */
+@keyframes popUp {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Start at original position */
+  }
+  25% {
+    transform: translateY(-20px) rotate(-90deg); /* Move up and start rotating */
+  }
+  50% {
+    transform: translateY(-40px) rotate(-180deg); /* Fully out of view and rotated */
+    opacity: 0; /* Fade out */
+  }
+  75% {
+    transform: translateY(-20px) ; /* Start coming back */
+    opacity: 0; /* Stay faded out */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg); /* Return to original position */
+    opacity: 1; /* Fade back in */
+  }
+}
+
+.text-pop-up {
+  animation: none; /* No animation by default */
+}
+
+/* Trigger animation when the parent <a> is hovered */
+a:hover .text-pop-up {
+  animation: popUp 0.45s ease-in-out forwards;
+}
+
+
