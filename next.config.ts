@@ -1,15 +1,13 @@
 import { Configuration as WebpackConfiguration } from 'webpack';
 
-module.exports = {
+const nextConfig = {
   webpack(config: WebpackConfiguration) {
-
-     module.exports = {
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
-  };
+    // Customize Webpack here if needed
     return config;
   },
-
-  
+  eslint: {
+    ignoreDuringBuilds: true,  // Ignores ESLint errors during build
+  },
 };
+
+export default nextConfig;
