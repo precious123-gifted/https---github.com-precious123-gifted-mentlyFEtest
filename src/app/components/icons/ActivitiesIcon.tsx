@@ -6,6 +6,7 @@ const SvgComponent = (props) => (
     width={'4vw'}
     height={'4vw'}
     fill="none"
+    className={props.className}
     {...props}
   >
     <path
