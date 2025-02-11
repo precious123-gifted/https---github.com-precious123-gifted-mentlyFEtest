@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Mently Project - Design Transformation
 
-## Getting Started
+Introduction
+This project was aimed at transforming the given design for Mently into a more polished, industry-standard product. The objective was to enhance visual balance, improve usability, and create a design that resonates with Mently’s brand identity while maintaining a clean, modern, and engaging user interface.
 
-First, run the development server:
+Key Enhancements
+1. Custom Icons for a Stronger Brand Identity
+Designed and integrated custom icons that are unique to the Mently brand.
+Ensured the icons align with the overall theme and add personality to the design.
+Focused on maintaining consistency in style, size, and color to achieve visual harmony.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Color Adjustment & Contrast Balancing
+Reviewed the initial color palette and adjusted all colors for improved balance and visual hierarchy.
+Enhanced contrast to ensure readability and better accessibility.
+Applied a cohesive color scheme to provide a more unified brand experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Micro-Animations for a Smooth User Experience
+Added clean micro-animations to key elements to improve interactivity and user engagement.
+Kept animations subtle and performance-friendly, ensuring they enhance rather than distract from the content.
+Applied transition effects for buttons, icons, and navigation elements to give the interface a modern touch.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+4. Structural & Visual Improvements
+Focused on creating a well-structured layout that provides clarity and ease of navigation.
+Improved spacing, typography, and component alignment for a cleaner, more organized design.
+Ensured the interface is responsive and looks great across various screen sizes, including desktop and mobile.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Eye-Catching and User-Friendly Design
+Delivered a visually appealing and functional design that draws attention without compromising usability.
+Prioritized simplicity and functionality while incorporating modern design trends.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Conclusion
+The Mently project was transformed into an industry-standard design by focusing on brand consistency, accessibility, and modern UI/UX principles. With custom icons, balanced colors, clean animations, and thoughtful structure, the final result is a polished and engaging experience that reflects Mently’s identity and vision.
