@@ -112,12 +112,13 @@ export default function SideBar() {
 
 // NavItem Component
 interface NavItemProps {
+  className?: string
   icon: React.ReactNode;
   label: string;
   isOpened: boolean; // Add isOpened prop
 }
 
-function NavItem({ icon, label, isOpened }: NavItemProps) {
+function NavItem({ icon, label, isOpened,className }: NavItemProps) {
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
         className: 'w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down',
