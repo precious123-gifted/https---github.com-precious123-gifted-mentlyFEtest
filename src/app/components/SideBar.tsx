@@ -22,7 +22,7 @@ export default function SideBar() {
   const toggleSidebar = () => {
     setIsOpened((prev) => !prev);
     setTriggerAnimation(true);
-    setTimeout(() => setTriggerAnimation(false), 1000);
+    
   };
 
   return (
@@ -118,10 +118,10 @@ interface NavItemProps {
   isOpened: boolean; // Add isOpened prop
 }
 
-function NavItem({ icon, label, isOpened,className }: NavItemProps ) {
+function NavItem({ icon, label, isOpened}: NavItemProps ) {
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
-        className:className,
+    
       })
     : icon;
 
