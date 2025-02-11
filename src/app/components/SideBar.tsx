@@ -22,7 +22,7 @@ export default function SideBar() {
   const toggleSidebar = () => {
     setIsOpened((prev) => !prev);
     setTriggerAnimation(true);
-    
+    setTimeout(() => setTriggerAnimation(false), 1000);
   };
 
   return (
@@ -41,7 +41,7 @@ export default function SideBar() {
       {/* Sidebar */}
       <aside
   className={`group fixed left-0 top-0 h-full transition-all duration-300
-    ${isOpened ? 'sidebar-open portrait:ml-[0vw]' : 'sidebar-closed portrait:ml-[-100vw]'}
+    ${isOpened ? 'sidebar-open portrait:ml-[0vw]' : 'portrait:ml-[-100vw]'}
     portrait:w-[40vw] landscape:md:hover:w-[13vw]
     p-4 overflow-hidden md:hover:shadow-[8px_0_40px_0_rgba(0,0,0,0.4)]
     hover:backdrop-blur-sm bg-[#1F0954] `}
@@ -64,15 +64,52 @@ export default function SideBar() {
 
       {/* Navigation Items */}
       <div className="flex flex-col space-y-[1.25vw] w-full fade-slide">
-        <NavItem icon={<DashboardIcon />} label="Dashboard" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<AnalyticsIcon />} label="Analytics" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<ProgramsIcon />} label="Programs" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<ActivitiesIcon />} label="Activities" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<FormsIcon />} label="Forms" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<FinanceIcon />} label="Finances" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<BadgesIcon />} label="Badges" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<SettingsIcon />} label="Settings" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
-        <NavItem icon={<LogoutIcon />} label="Logout" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+      <NavItem
+  icon={<DashboardIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Dashboard"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<AnalyticsIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Analytics"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<ProgramsIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Programs"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<ActivitiesIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Activities"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<FormsIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Forms"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<FinanceIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Finances"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<BadgesIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Badges"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<SettingsIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Settings"
+  isOpened={isOpened}
+/>
+<NavItem
+  icon={<LogoutIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+  label="Logout"
+  isOpened={isOpened}
+/>
+ 
       </div>
     </div>
 
@@ -86,7 +123,7 @@ export default function SideBar() {
           href="#"
           className="flex items-center justify-center md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] p-2 hover:bg-[#FAF5E5] hover:text-[#1F0954] rounded-sm transition-colors duration-200 relative group"
         >
-          <HelpIcon className="w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw] portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />
+          <HelpIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw]  portrait:h-[4vw] portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />
           <span className={`text-[0.6vw] portrait:text-[2vw]  font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
             Help & Support
           </span>
@@ -94,7 +131,7 @@ export default function SideBar() {
         
           {/* Dark Mode Toggle */}
         <div className="flex items-center justify-center md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm transition-colors duration-200 pl-[0.3vw] group">
-          <div className="w-[1vw] md:w-[3vw] portrait:w-[8vw] portrait:sm:w-[6vw]  h-[1.5vw] portrait:h-[3vw] portrait:sm:h-[2.4vw] bg-white/10 rounded-full p-[0.3vw] cursor-pointer flex items-center transition-all duration-300">
+          <div className="w-[1vw] md:w-[3vw] portrait:w-[8vw] portrait:sm:w-[2.4vw]  h-[1.5vw] portrait:h-[3vw] portrait:sm:h-[2.4vw] bg-white/10 rounded-full p-[0.3vw] cursor-pointer flex items-center transition-all duration-300">
             <span className="block w-[1vw] h-[1vw] portrait:w-[3vw] portrait:h-[3vw] portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw]  bg-[#FAF5E5] rounded-full transition-transform duration-200 translate-x-0" />
           </div>
           <span className={`text-[0.6vw] portrait:text-[2vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block`}>
@@ -112,16 +149,14 @@ export default function SideBar() {
 
 // NavItem Component
 interface NavItemProps {
-  className?: string
   icon: React.ReactNode;
   label: string;
   isOpened: boolean; // Add isOpened prop
 }
 
-function NavItem({ icon, label, isOpened}: NavItemProps ) {
+function NavItem({ icon, label, isOpened }: NavItemProps) {
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
-    
       })
     : icon;
 

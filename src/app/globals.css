@@ -64,22 +64,19 @@ input{margin: none;}
   0% {
     transform: translateX(-100vw) scale(0.8); /* Start off-screen and slightly smaller */
     opacity: 0; /* Fully transparent */
-    filter: blur(6px); /* Strong blur for a magical entrance */
+    filter: blur(3px); /* Reduce blur */
+
   }
   30% {
-    transform: translateX(-20vw) scale(1.1); /* Pulling in with slight over-scaling */
     opacity: 0.5; /* Partially opaque */
-    filter: blur(3px); /* Reduce blur */
   }
   70% {
     transform: translateX(-5vw) scale(0.95); /* Slight pull-back before settling */
     opacity: 0.9; /* Almost fully opaque */
-    filter: blur(1px); /* Minimal blur */
   }
   100% {
     transform: translateX(0) scale(1); /* Final position with normal size */
     opacity: 1; /* Fully opaque */
-    filter: blur(0); /* No blur */
   }
 }
 
@@ -109,7 +106,7 @@ input{margin: none;}
 
 /* Apply Animations */
 .sidebar-open {
-  animation: slideIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Spring-like easing for pull-in */
+  animation: slideIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Spring-like easing for pull-in */
 }
 
 .sidebar-closed {
