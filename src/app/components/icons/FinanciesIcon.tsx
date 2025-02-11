@@ -1,34 +1,50 @@
-import * as React from "react"
-const SvgComponent = (props:any) => (
+import * as React from "react";
+
+interface SvgComponentProps {
+  className?: string;
+  fill?: string;
+  width?: string | number;
+  height?: string | number;
+  [key: string]: any; // Allows additional props like onClick, id, etc.
+}
+
+const SvgComponent: React.FC<SvgComponentProps> = ({
+  className,
+  fill = "currentColor",
+  width = "4vw",
+  height = "4vw",
+  ...props
+}) => (
   <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  width={'4vw'}
-  height={'4vw'}
-  fill="none"
-  className={props.className}
-  {...props}
->
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    width={width}
+    height={height}
+    fill="none"
+    className={className}
+    {...props}
+  >
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       fillRule="evenodd"
       d="M91.667 19.535c0-2.067-1.493-3.742-3.334-3.742h-85C1.493 15.793 0 17.468 0 19.535v76.722C0 98.325 1.492 100 3.333 100h85c1.841 0 3.334-1.676 3.334-3.743V19.535Zm-8.334 69.237c0 1.034-.746 1.872-1.666 1.872H10c-.92 0-1.667-.838-1.667-1.872V43.394c0-1.033.747-1.871 1.667-1.871h71.667c.92 0 1.666.837 1.666 1.87v45.38Zm0-58.477c0 1.033-.746 1.871-1.666 1.871H10c-.92 0-1.667-.837-1.667-1.871V27.02c0-1.033.747-1.871 1.667-1.871h71.667c.92 0 1.666.838 1.666 1.871v3.275Z"
       clipRule="evenodd"
     />
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       fillRule="evenodd"
       d="M72.85 54.069h-7.934a.4.4 0 0 0-.4.4v6.855c0 .22.18.4.4.4h7.934v-7.655Zm-1.39 1.276h-5.555v5.103h5.555v-5.103ZM100 46.813a.4.4 0 0 0-.4-.4H75.4a.4.4 0 0 0-.4.4V68.98c0 .221.18.4.4.4h24.2a.4.4 0 0 0 .4-.4V46.813Zm-4.167 3.428H79.167v15.31h16.666v-15.31Z"
       clipRule="evenodd"
     />
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       d="M1.114 18.285c0-.717.419-1.338 1.009-1.495L65.076.518c.703-.186 1.398-.074 1.545.761l.788 4.476c.146.827-.302 1.638-1 1.811L2.669 23.371c-.802.199-1.554-.527-1.554-1.499v-3.587Z"
     />
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       d="M62.58 23.452c-.712 0-1.29-.686-1.29-1.531V3.346c0-.58.277-1.11.714-1.37L65.076.095c.858-.51 2.666 1.164 2.666 2.302v19.525c0 .845-.578 1.53-1.29 1.53H62.58ZM46.38 54.545v2.838h-2.041c-1.851 0-3.403 1.617-3.403 3.546v1.42c0 1.929 1.198 3.518 2.967 4l6.968 1.873c.381.113.925.822.925 1.248v1.419c0 .397-.299.709-.68.709h-6.805a1.475 1.475 0 0 1-.68-.17V68.76h-2.722v2.837a2.69 2.69 0 0 0 1.198 2.213c.626.454 1.415.624 2.204.624h2.042v2.838h2.722v-2.838h2.041c1.878 0 3.402-1.589 3.402-3.546V69.47c0-1.93-1.197-3.518-2.967-4l-6.967-1.873c-.382-.114-.926-.823-.926-1.249V60.93c0-.397.3-.709.68-.709h6.805c.3 0 .572.114.68.17v2.667h2.722V60.22a2.69 2.69 0 0 0-1.197-2.213c-.626-.454-1.416-.624-2.205-.624h-2.041v-2.838H46.38Z"
     />
   </svg>
-)
-export default SvgComponent
+);
+
+export default SvgComponent;

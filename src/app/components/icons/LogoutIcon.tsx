@@ -1,24 +1,40 @@
-import * as React from "react"
-const SvgComponent = (props:any) => (
+import * as React from "react";
+
+interface SvgComponentProps {
+  className?: string;
+  fill?: string;
+  width?: string | number;
+  height?: string | number;
+  [key: string]: any;
+}
+
+const SvgComponent: React.FC<SvgComponentProps> = ({
+  className,
+  fill = "currentColor",
+  width = "4vw",
+  height = "4vw",
+  ...props
+}) => (
   <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  width={'4vw'}
-  height={'4vw'}
-  fill="none"
-  className={props.className}
-  {...props}
->
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    width={width}
+    height={height}
+    fill="none"
+    className={className}
+    {...props}
+  >
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       fillRule="evenodd"
       d="M100 4.444C100 1.99 98.372 0 96.364 0H3.636C1.628 0 0 1.99 0 4.444v91.112C0 98.01 1.628 100 3.636 100h92.728c2.008 0 3.636-1.99 3.636-4.444V4.444Zm-9.09 82.223c0 1.227-.815 2.222-1.82 2.222H10.91c-1.005 0-1.82-.995-1.82-2.222v-53.89c0-1.227.815-2.221 1.82-2.221h78.18c1.005 0 1.82.994 1.82 2.222v53.889Zm0-69.445c0 1.227-.815 2.222-1.82 2.222H10.91c-1.005 0-1.82-.994-1.82-2.222v-3.889c0-1.227.815-2.222 1.82-2.222h78.18c1.005 0 1.82.995 1.82 2.222v3.89Z"
       clipRule="evenodd"
     />
     <path
-      fill={props.fill || 'currentColor'}
+      fill={fill}
       d="M35.95 77.273c-1.136 0-2.108-.396-2.917-1.186-.809-.79-1.213-1.742-1.215-2.855V44.95c0-1.112.405-2.063 1.215-2.853s1.782-1.187 2.917-1.188h12.397c.585 0 1.077.194 1.473.582.397.388.595.867.593 1.438a1.949 1.949 0 0 1-.595 1.44c-.395.39-.886.583-1.47.58H35.95v28.283h12.397c.585 0 1.077.194 1.473.582.397.388.595.868.593 1.439a1.949 1.949 0 0 1-.595 1.44c-.395.39-.886.582-1.47.58H35.95ZM61.105 61.11H46.281c-.585 0-1.076-.194-1.471-.582a1.942 1.942 0 0 1-.595-1.438 1.921 1.921 0 0 1 .595-1.438c.398-.388.888-.582 1.471-.582h14.824l-3.874-3.788a1.833 1.833 0 0 1-.568-1.364c0-.538.19-1.01.568-1.414.38-.404.861-.615 1.447-.632a1.971 1.971 0 0 1 1.498.582l7.386 7.222c.413.404.62.875.62 1.414 0 .539-.207 1.01-.62 1.414l-7.386 7.222a1.948 1.948 0 0 1-1.471.582 2.128 2.128 0 0 1-1.474-.632 1.935 1.935 0 0 1-.54-1.439c.017-.555.215-1.018.592-1.39l3.822-3.737Z"
     />
   </svg>
-)
-export default SvgComponent
+);
+
+export default SvgComponent;

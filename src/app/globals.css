@@ -59,8 +59,62 @@ input{margin: none;}
 }
 
 
+/* Slide-In Animation (Pull-In Effect) */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100vw) scale(0.8); /* Start off-screen and slightly smaller */
+    opacity: 0; /* Fully transparent */
+    filter: blur(6px); /* Strong blur for a magical entrance */
+  }
+  30% {
+    transform: translateX(-20vw) scale(1.1); /* Pulling in with slight over-scaling */
+    opacity: 0.5; /* Partially opaque */
+    filter: blur(3px); /* Reduce blur */
+  }
+  70% {
+    transform: translateX(-5vw) scale(0.95); /* Slight pull-back before settling */
+    opacity: 0.9; /* Almost fully opaque */
+    filter: blur(1px); /* Minimal blur */
+  }
+  100% {
+    transform: translateX(0) scale(1); /* Final position with normal size */
+    opacity: 1; /* Fully opaque */
+    filter: blur(0); /* No blur */
+  }
+}
 
+/* Slide-Out Animation (Pull-Out Effect) */
+@keyframes slideOut {
+  0% {
+    transform: translateX(0) scale(1); /* Start at normal size */
+    opacity: 1; /* Fully opaque */
+    filter: blur(0); /* No blur */
+  }
+  30% {
+    transform: translateX(-10vw) scale(0.9); /* Start pulling out with slight scaling down */
+    opacity: 0.8; /* Partially transparent */
+    filter: blur(2px); /* Add slight blur */
+  }
+  70% {
+    transform: translateX(-80vw) scale(0.8); /* Accelerate movement out of view */
+    opacity: 0.4; /* More transparent */
+    filter: blur(4px); /* Increase blur */
+  }
+  100% {
+    transform: translateX(-100vw) scale(0.7); /* Fully off-screen and smaller */
+    opacity: 0; /* Fully transparent */
+    filter: blur(6px); /* Strong blur for a magical exit */
+  }
+}
 
+/* Apply Animations */
+.sidebar-open {
+  animation: slideIn 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Spring-like easing for pull-in */
+}
+
+.sidebar-closed {
+  animation: slideOut 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; /* Spring-like easing for pull-out */
+}
 
 
 

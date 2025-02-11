@@ -41,7 +41,7 @@ export default function SideBar() {
       {/* Sidebar */}
       <aside
   className={`group fixed left-0 top-0 h-full transition-all duration-300
-    ${isOpened ? 'sidebar-open portrait:ml-[0vw]' : 'portrait:ml-[-100vw]'}
+    ${isOpened ? 'sidebar-open portrait:ml-[0vw]' : 'sidebar-closed portrait:ml-[-100vw]'}
     portrait:w-[40vw] landscape:md:hover:w-[13vw]
     p-4 overflow-hidden md:hover:shadow-[8px_0_40px_0_rgba(0,0,0,0.4)]
     hover:backdrop-blur-sm bg-[#1F0954] `}
