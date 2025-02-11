@@ -118,17 +118,25 @@ interface NavItemProps {
   isOpened: boolean; // Add isOpened prop
 }
 
-function NavItem({ icon, label, isOpened,className }: NavItemProps) {
+interface NavItemProps {
+  className?: string; 
+  icon: React.ReactNode;
+  label: string;
+  isOpened: boolean;
+}
+
+function NavItem({ icon, label, isOpened, className }: NavItemProps) {
+  // Ensure the icon is a valid React element before cloning it with a custom className
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
-        className: 'w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down',
+        className: `w-[1.3vw] h-[1.3vw] portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down ${icon.props.className || ''}`, // Maintain existing icon className if any
       })
     : icon;
 
   return (
     <a
       href="#"
-      className="flex items-center justify-start md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm p-2 transition-colors duration-200 hover:bg-[#FAF5E5] hover:text-[#1F0954] relative group w-full"
+      className={`flex items-center justify-start md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm p-2 transition-colors duration-200 hover:bg-[#FAF5E5] hover:text-[#1F0954] relative group w-full ${className || ''}`} // Ensure className is applied
     >
       {iconElement}
       <span className={`text-[0.8vw] portrait:text-[3vw] portrait:sm:text-[2vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
