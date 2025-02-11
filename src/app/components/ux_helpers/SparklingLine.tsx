@@ -22,7 +22,7 @@ const SparklingLine: React.FC<SparklingLineProps> = ({ className }) => {
 
   return (
     <div
-      className={`absolute inset-0 z-0 pointer-events-none ${className} opacity-[4.8%] pointer-events-none`}
+      className={`absolute inset-0 z-0 pointer-events-none ${className} opacity-[4%] pointer-events-none`}
       style={{ overflow: 'hidden' }}
     >
       {lines.map((line, index) => (

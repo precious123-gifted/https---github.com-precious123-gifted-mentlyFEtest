@@ -50,7 +50,7 @@ input{margin: none;}
 }
 
 .animate-nod {
-  animation: nod 0.7s ease-in-out infinite;
+  animation: nod 0.8s ease-in-out infinite;
   animation-play-state: paused; /* Pause animation by default */
 }
 
