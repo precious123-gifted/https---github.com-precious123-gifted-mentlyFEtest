@@ -202,7 +202,7 @@ setTimeout(() => {
         <header className="text-[1.3vw] portrait:text-[4vw]  font-semibold ">Mastering the work life Equation</header>
 
 {/* Name and Type */}
-  <div className="flex items-center gap-4 space-y-[0.4vw] portrait:text-[2.4vw]">
+  <div className="flex items-center gap-4 space-y-[0.4vw] portrait:text-[2.5vw]">
     <span className="font-medium">Mözön - Nwachukwu Peculiar</span>
     <span style={{
   background: 'linear-gradient(90deg, #FF0044 0%, #F6A000 100%)',
