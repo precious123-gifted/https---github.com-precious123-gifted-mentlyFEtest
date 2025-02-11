@@ -5,7 +5,6 @@ import useOrientation from "../ux_helpers/useOrentation"; // Make sure this is t
 
 const SvgComponent = (props: any) => {
   // Destructure orientation values from the hook
-  const { isPortrait, isWide } = useOrientation();
 
   return (
     <svg
