@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import bannerBG from '../assets/banner-bg.jpg'
 import bannerIMG from '../assets/banner-img.jpg'
 import notificationIcon from '../assets/notification-icon.png'
@@ -19,9 +19,24 @@ export default function FormPage() {
     }
   };
 
+
+const fadeInContent =  useRef<HTMLDivElement>(null);
+
+useEffect(()=>{
+
+fadeInContent.current?.classList.add('fade-in-content')
+setTimeout(() => {
+  fadeInContent.current?.classList.remove('fade-in-content')
+}, 2000);
+
+
+
+},[fadeInContent])
+
+
   return (
     
-    <div className="content landscape:pl-[2vw] portrait:px-[2vw] portrait:sm:px-[2vw]  w-[100vw] flex justify-between portrait:flex-col">
+    <div ref={fadeInContent} className="content landscape:pl-[2vw] portrait:px-[2vw] portrait:sm:px-[2vw]  w-[100vw] flex justify-between portrait:flex-col">
   <div className="w-[39%] portrait:w-full    px-[4vw] py-[2vw]  rounded-[1vw] shadow-md">
         
       {/* Header */}

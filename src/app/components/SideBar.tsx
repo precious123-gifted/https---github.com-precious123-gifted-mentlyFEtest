@@ -29,7 +29,7 @@ export default function SideBar() {
     <>
       {/* Sidebar Handle */}
       <div
-        className={`sidebar-entrance-handle landscape:hidden rounded-r-sm z-50 overflow-hidden cursor-pointer
+        className={`sidebar-entrance-handle  landscape:hidden rounded-r-sm z-50 overflow-hidden cursor-pointer
                    md:hover:shadow-[8px_0_40px_0_rgba(0,0,0,0.4)] 
                    hover:backdrop-blur-sm  ${isOpened? 'bg-[#431e98d2]' : 'bg-[#240e55]' } fixed left-0 top-0 h-[6vw] w-[4vw] grid place-content-center`}
         onClick={toggleSidebar}
@@ -40,7 +40,7 @@ export default function SideBar() {
 
       {/* Sidebar */}
       <aside
-  className={`group fixed left-0 top-0 h-full transition-all duration-300
+  className={`group fixed  left-0 top-0 h-full transition-all duration-300
     ${isOpened ? 'sidebar-open portrait:ml-[0vw]' : 'portrait:ml-[-100vw]'}
     portrait:w-[40vw] landscape:md:hover:w-[13vw]
     p-4 overflow-hidden md:hover:shadow-[8px_0_40px_0_rgba(0,0,0,0.4)]
@@ -53,7 +53,7 @@ export default function SideBar() {
         <Image
           src={mentlyLogo}
           alt="logo"
-          className={`w-[2vw] portrait:w-[6vw] md:group-hover:w-[2.6vw] transition-all duration-300   ${isOpened ? 'animate-nod ' : ''}`}
+          className={`w-[2vw] portrait:w-[6vw] md:group-hover:w-[2.6vw] transition-all duration-300  animate-nod`}
           width={30}
           height={30}
         />

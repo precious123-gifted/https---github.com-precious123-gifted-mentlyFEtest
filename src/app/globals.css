@@ -17,6 +17,24 @@ input{margin: none;}
 }
 
 
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+    
+  }
+}
+
+.fade-in-content {
+  animation: fadeInContent 2s ease-in-out forwards;
+  opacity: 0; /* Start invisible */
+}
+
+
+
 
 /* Logo Nod Animation */
 @keyframes nod {
@@ -32,7 +50,7 @@ input{margin: none;}
 }
 
 .animate-nod {
-  animation: nod 0.8s ease-in-out infinite;
+  animation: nod 0.7s ease-in-out infinite;
   animation-play-state: paused; /* Pause animation by default */
 }
 
@@ -149,7 +167,7 @@ input{margin: none;}
 
 /* Trigger animation when the parent <a> is hovered */
 a:hover .icon-pop-down {
-  animation: popDown 0.5s ease-in-out forwards;
+  animation: popDown 0.6s ease-in-out forwards;
 }
 
 /* Text Pop-Up Animation */
@@ -180,7 +198,7 @@ a:hover .icon-pop-down {
 
 /* Trigger animation when the parent <a> is hovered */
 a:hover .text-pop-up {
-  animation: popUp 0.45s ease-in-out forwards;
+  animation: popUp 0.7s ease-in-out forwards;
 }
 
 
