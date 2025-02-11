@@ -84,8 +84,8 @@ export default function SideBar() {
   label="Activities"
   isOpened={isOpened}
 />
-<NavItem
-  icon={<FormsIcon className="w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
+<NavItem 
+  icon={<FormsIcon className="  w-[1.3vw] h-[1.3vw] cursor-pointer portrait:w-[4vw] portrait:h-[4vw] portrait:sm:w-[2.4vw] portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />}
   label="Forms"
   isOpened={isOpened}
 />

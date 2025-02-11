@@ -1,5 +1,12 @@
 Mently Project - Design Transformation
 
+## Screenshots
+![Mently Forms Page Desktop View](./public/mently-desktop-design1.png)
+![Mently Forms Page Desktop View](./public/mently-desktop-design1.png)
+![Mently Forms Page Mobile View Side Bar](./public/mently-mobile-design1.png)
+![Mently Forms Page Mobile View Side Bar](./public/mently-mobile-design2.png)
+
+
 Introduction
 This project was aimed at transforming the given design for Mently into a more polished, industry-standard product. The objective was to enhance visual balance, improve usability, and create a design that resonates with Mently’s brand identity while maintaining a clean, modern, and engaging user interface.
 
