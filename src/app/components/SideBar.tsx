@@ -118,7 +118,7 @@ interface NavItemProps {
   isOpened: boolean; // Add isOpened prop
 }
 
-function NavItem({ icon, label, isOpened,className }: NavItemProps) {
+function NavItem({ icon, label, isOpened,className }: NavItemProps ) {
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
         className:className,
