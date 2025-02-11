@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from "react";
-import useOrientation from "../ux_helpers/useOrentation"; // Make sure this is the correct path
 
 const SvgComponent = (props: any) => {
   // Destructure orientation values from the hook

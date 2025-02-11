@@ -86,7 +86,7 @@ export default function SideBar() {
           href="#"
           className="flex items-center justify-center md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] p-2 hover:bg-[#FAF5E5] hover:text-[#1F0954] rounded-sm transition-colors duration-200 relative group"
         >
-          <HelpIcon className="w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />
+          <HelpIcon className="w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw] portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down" />
           <span className={`text-[0.6vw] portrait:text-[2vw]  font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
             Help & Support
           </span>
@@ -94,8 +94,8 @@ export default function SideBar() {
         
           {/* Dark Mode Toggle */}
         <div className="flex items-center justify-center md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm transition-colors duration-200 pl-[0.3vw] group">
-          <div className="w-[1vw] md:w-[3vw] portrait:w-[8vw] h-[1.5vw] portrait:h-[3vw] bg-white/10 rounded-full p-[0.3vw] cursor-pointer flex items-center transition-all duration-300">
-            <span className="block w-[1vw] h-[1vw] portrait:w-[3vw] portrait:h-[3vw] bg-[#FAF5E5] rounded-full transition-transform duration-200 translate-x-0" />
+          <div className="w-[1vw] md:w-[3vw] portrait:w-[8vw] portrait:sm:w-[6vw]  h-[1.5vw] portrait:h-[3vw] portrait:sm:h-[2.4vw] bg-white/10 rounded-full p-[0.3vw] cursor-pointer flex items-center transition-all duration-300">
+            <span className="block w-[1vw] h-[1vw] portrait:w-[3vw] portrait:h-[3vw] portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw]  bg-[#FAF5E5] rounded-full transition-transform duration-200 translate-x-0" />
           </div>
           <span className={`text-[0.6vw] portrait:text-[2vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block`}>
             Dark Mode
@@ -120,7 +120,7 @@ interface NavItemProps {
 function NavItem({ icon, label, isOpened }: NavItemProps) {
   const iconElement = React.isValidElement(icon)
     ? React.cloneElement(icon, {
-        className: 'w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down',
+        className: 'w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down',
       })
     : icon;
 
@@ -130,7 +130,7 @@ function NavItem({ icon, label, isOpened }: NavItemProps) {
       className="flex items-center justify-start md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm p-2 transition-colors duration-200 hover:bg-[#FAF5E5] hover:text-[#1F0954] relative group w-full"
     >
       {iconElement}
-      <span className={`text-[0.8vw] portrait:text-[3vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
+      <span className={`text-[0.8vw] portrait:text-[3vw] portrait:sm:text-[2vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
         {label}
       </span>
     </a>
