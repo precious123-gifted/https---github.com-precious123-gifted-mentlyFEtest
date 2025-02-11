@@ -126,7 +126,7 @@ export default function FormPage() {
 <div className="profile-nav w-full  fixed left-0 top-0 flex justify-end mt-[0.8vw] pr-[2vw]">
 <div className="content flex space-x-[1.2vw]">
 
-<Image src={notificationIcon} alt='notificationIcon' className='w-[1.3vw] h-[1.5vw]  portrait:w-[3.8vw] portrait:h-[4.6vw]  portrait:sm:w-[2vw] portrait:sm:h-[2.2vw]'/>
+<Image src={notificationIcon} alt='notificationIcon' className='w-[1.3vw] h-[1.5vw]  portrait:w-[3.8vw] portrait:h-[4.6vw]  portrait:sm:w-[2.8vw] portrait:sm:h-[3.8vw]'/>
 
 <section className='flex space-x-[0.4vw]'>
 

@@ -55,7 +55,7 @@ input{margin: none;}
 }
 
 .sidebar-open .fade-slide {
-  animation: fadeSlideIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: fadeSlideIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 

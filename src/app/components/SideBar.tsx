@@ -64,15 +64,15 @@ export default function SideBar() {
 
       {/* Navigation Items */}
       <div className="flex flex-col space-y-[1.25vw] w-full fade-slide">
-        <NavItem icon={<DashboardIcon />} label="Dashboard" isOpened={isOpened} />
-        <NavItem icon={<AnalyticsIcon />} label="Analytics" isOpened={isOpened} />
-        <NavItem icon={<ProgramsIcon />} label="Programs" isOpened={isOpened} />
-        <NavItem icon={<ActivitiesIcon />} label="Activities" isOpened={isOpened} />
-        <NavItem icon={<FormsIcon />} label="Forms" isOpened={isOpened} />
-        <NavItem icon={<FinanceIcon />} label="Finances" isOpened={isOpened} />
-        <NavItem icon={<BadgesIcon />} label="Badges" isOpened={isOpened} />
-        <NavItem icon={<SettingsIcon />} label="Settings" isOpened={isOpened} />
-        <NavItem icon={<LogoutIcon />} label="Logout" isOpened={isOpened} />
+        <NavItem icon={<DashboardIcon />} label="Dashboard" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<AnalyticsIcon />} label="Analytics" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<ProgramsIcon />} label="Programs" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<ActivitiesIcon />} label="Activities" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<FormsIcon />} label="Forms" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<FinanceIcon />} label="Finances" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<BadgesIcon />} label="Badges" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<SettingsIcon />} label="Settings" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
+        <NavItem icon={<LogoutIcon />} label="Logout" isOpened={isOpened} className='w-[1.3vw] h-[1.3vw] portrait:w-[4vw]  portrait:h-[4vw]  portrait:sm:w-[2.4vw]  portrait:sm:h-[2.4vw] shrink-0 fill-current transition-transform duration-200 icon-pop-down'/>
       </div>
     </div>
 
@@ -117,23 +117,21 @@ interface NavItemProps {
   label: string;
   isOpened: boolean; // Add isOpened prop
 }
-interface NavItemProps {
-  icon: React.ReactNode; // The icon as a React component
-  label: string; // The label for the navigation item
-}
 
-function NavItem({ icon, label }: NavItemProps) {
+function NavItem({ icon, label, isOpened,className }: NavItemProps) {
+  const iconElement = React.isValidElement(icon)
+    ? React.cloneElement(icon, {
+        className:className,
+      })
+    : icon;
+
   return (
     <a
       href="#"
-      className="flex items-center gap-[1.25vw] rounded-sm p-2 transition-colors duration-200
-                 hover:bg-[#FAF5E5] hover:text-[#1F0954] relative group"
+      className="flex items-center justify-start md:justify-start gap-[0.6vw] portrait:gap-[1.4vw] rounded-sm p-2 transition-colors duration-200 hover:bg-[#FAF5E5] hover:text-[#1F0954] relative group w-full"
     >
-      {/* Directly pass className to the icon */}
-      {icon}
-
-      {/* Label animates up and rotates on hover of the parent <a> */}
-      <span className="text-sm font-medium whitespace-nowrap overflow-hidden group md:group-hover:block hidden text-pop-up">
+      {iconElement}
+      <span className={`text-[0.8vw] portrait:text-[3vw] portrait:sm:text-[2vw] font-medium whitespace-nowrap overflow-hidden ${isOpened ? 'block' : 'hidden'} md:group-hover:block text-pop-up`}>
         {label}
       </span>
     </a>
