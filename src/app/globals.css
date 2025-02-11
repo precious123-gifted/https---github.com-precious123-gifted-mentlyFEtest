@@ -16,6 +16,8 @@ input{margin: none;}
   }
 }
 
+
+
 /* Logo Nod Animation */
 @keyframes nod {
   0% {
@@ -34,9 +36,38 @@ input{margin: none;}
   animation-play-state: paused; /* Pause animation by default */
 }
 
-.group:hover .animate-nod {
-  animation-play-state: running; /* Start animation on hover */
+/* Trigger animation on group hover or when sidebar is opened */
+.group:hover .animate-nod,
+.sidebar-open .animate-nod {
+  animation-play-state: running;
 }
+
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.sidebar-open .fade-slide {
+  animation: fadeSlideIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Icon Pop-Down Animation */
@@ -102,3 +133,93 @@ a:hover .text-pop-up {
 }
 
 
+/* Slanted Line Animation */
+@keyframes moveAcrossScreen {
+  0% {
+    transform: rotate(var(--angle)) translateX(-100vw) translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.sparkling-line {
+  position: absolute;
+  width: 100vw; /* Full width */
+  height: 1px; /* Thin line */
+  top: 0;
+  left: 0;
+  background-color: currentColor; /* Default color */
+  animation: moveAcrossScreen 8s linear infinite; /* Periodic movement */
+  --angle: 0deg; /* Custom property for rotation */
+}
+
+.sparkling-line:nth-child(even) {
+  animation-direction: reverse; /* Reverse direction for even lines */
+}
+
+/* Custom Scrollbar Styling */
+* {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #1F0954 #fff1db; /* Blue thumb and dark background */
+}
+
+/* WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Shorter scrollbar width */
+  height: 8px; /* Shorter scrollbar height (for vertical/horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0074D9; /* Blue color for the scrollba/* Custom Scrollbar Styling */
+* {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #0074D9 #1F0954; /* Blue thumb and dark background */
+}
+
+/* WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Shorter scrollbar width */
+  height: 8px; /* Shorter scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0074D9; /* Blue color for the scrollbar thumb */
+  border-radius: 20px; /* Fully rounded thumb */
+  min-height: 40px; /* Shorter thumb */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.1); /* Shiny effect */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1F0954; /* Dark background color for the track */
+  border-radius: 20px; /* Rounded track */
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+  border-radius: 4px; /* Rounded corners for the thumb */
+  min-height: 40px; /* Make the thumb shorter */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1F0954; /* Dark background color for the track */
+}
+
+
+
+/* Default focus styles */
+:focus-visible {
+  outline: none; /* Remove default browser outline */
+}
+
+/* Custom focus style for tab navigation */
+.tab-focused {
+  box-shadow: 0 0 0 2px #0074D9, 0 0 0 4px rgba(0, 116, 217, 0.3); /* Blue glow */
+  border-radius: 0.5rem; /* Rounded corners */
+}

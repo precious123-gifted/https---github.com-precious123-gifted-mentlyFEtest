@@ -3,6 +3,7 @@ import {  Geist_Mono } from "next/font/google";
 import { Chivo } from "next/font/google";
 import "./globals.css";
 import SideBar from "./components/SideBar";
+import SlantedLine from "./components/ux_helpers/SlantedLine";
 
 
 // Configure Chivo font
@@ -30,21 +31,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${chivo.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${chivo.variable} ${geistMono.variable} overflow-x-hidden`}>
       <body className={`antialiased flex font-sans h-full `}>
-        <aside 
-          className="group fixed left-0 top-0 h-full  transition-all duration-300
-                               w-[3.8vw] md:hover:w-[13vw]
-                   md:hover: z-10 p-4 overflow-hidden
-                    md:hover:shadow-[8px_0_40px_0_rgba(0,0,0,0.4)] 
-                    hover:backdrop-blur-sm bg-[#1F0954]"
-        >
-          <div className="flex flex-col space-y-4">
+        <SlantedLine/>
+      
             <SideBar />
-          </div>
-        </aside>
+
+       
 
         {children}
+
+
+        
       </body>
     </html>
   );

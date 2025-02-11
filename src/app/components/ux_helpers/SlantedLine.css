@@ -1,0 +1,32 @@
+.slanted-line-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.slanted-line {
+  position: absolute;
+  bottom: 100%;
+  top: -100%;
+  left: -50%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.363), transparent);
+  transform: rotate(-45deg);
+  animation: moveSlantedLine 4s linear infinite;
+}
+
+@keyframes moveSlantedLine {
+  0% {
+    bottom: 100%;
+    left: -50%;
+  }
+  100% {
+    bottom: -100%;
+    left: 50%;
+  }
+}
